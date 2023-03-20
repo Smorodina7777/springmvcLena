@@ -1,7 +1,9 @@
 package ru.web.repository;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import org.springframework.stereotype.Component;
 import ru.web.model.Car;
 
@@ -36,8 +38,8 @@ public class CarRepo {
     return repo.get(id);
   }
 
-  public Collection<Car> getAllCar() {
-    return repo.values();
+  public List<Car> getAllCar() {
+    return new ArrayList<>(repo.values());
   }
 
   public void saveCar(Car car) {
